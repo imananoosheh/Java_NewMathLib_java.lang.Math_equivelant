@@ -38,13 +38,11 @@ public class NewMathLib {
 		return radian * (180 / NewMathLib.PI);
 	}
 
-	public static double cosFunction(double input) {
+	public static double cos(double input) {
 
 		int exp = 10;
 		double output = 0.0;
-		// double dividend = 0;
-		// double divisor = 0;
-
+		
 		input = toRadians(input);
 		for (int n = 0; n <= exp; n++) {
 			double dividend = pow(-1, n) * pow(input, 2 * n);
