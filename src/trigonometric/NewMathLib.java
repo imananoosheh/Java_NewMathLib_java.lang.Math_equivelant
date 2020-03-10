@@ -7,6 +7,10 @@ import java.lang.Math;
 
 /**
  * @author Iman Anooshehpour
+ * @author Aashka Prajapati
+ * @author Shreya Wadhwa
+ * @author Kasra Naderi
+ * @groupname group33
  *
  */
 public class NewMathLib {
@@ -38,7 +42,7 @@ public class NewMathLib {
 		return radian * (180 / NewMathLib.PI);
 	}
 
-	public static double sinFunc(double rad) {
+	public static double sin(double rad) {
 		int no = 10;
 		double output = 0.0;
 		rad = toRadians(rad);
@@ -70,7 +74,7 @@ public class NewMathLib {
 	public static double tan(double input) {
 
 		input = NewMathLib.toRadians(input);
-		return (Math.sin(input) / Math.cos(input));
+		return (NewMathLib.sin(input) / NewMathLib.cos(input));
 
 	}
 
@@ -80,7 +84,7 @@ public class NewMathLib {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println(NewMathLib.sinFunc(88));
+		System.out.println(NewMathLib.sin(88));
 		System.out.println(Math.sin(Math.toRadians(88)));
 
 		/*System.out.println(NewMathLib.pow(2, -9));
