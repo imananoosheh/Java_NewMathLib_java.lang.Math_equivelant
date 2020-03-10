@@ -10,8 +10,9 @@ import java.lang.Math;
  *
  */
 public class NewMathLib {
-	static double[] bernoulli = { 1.000000000, 0.500000000, 0.166666666, 0, -0.033333333, 0, 0.023809523, 0,
+	private static double[] bernoulli = { 1.000000000, 0.500000000, 0.166666666, 0, -0.033333333, 0, 0.023809523, 0,
 			-0.033333333, 0, 0.075757575, 0, -0.253113553 };
+	public static double PI = 3.1415926535897932384626433;
 
 	static int factorial(int input) {
 		int output = 1;
@@ -31,16 +32,29 @@ public class NewMathLib {
 		}
 	}
 
-	public static double tan(int input) {
-		double output = 0.0000;
-		for (int n = 0; n <= 6; n++) {
+	public static double toRadians(double degree) {
+		return degree * NewMathLib.PI / 180;
+	}
 
-			double dividend = ((bernoulli[2 * n]) * (NewMathLib.pow(-4, n)) * (1 - NewMathLib.pow(4, n)))
-					* NewMathLib.pow(Math.toRadians(input), (2 * n) - 1);
-			double divisor = factorial(2 * n);
-			output = output + dividend / divisor;
-		}
-		return output;
+	public static double tan(double input) {
+//		double output = 0.0000;
+//		for (int n = 1; n <= 6; n++) {
+//
+//			double dividend = (NewMathLib.pow(-1, n - 1)) * (NewMathLib.pow(2, 2 * n))
+//					* (NewMathLib.pow(2, (2 * n) - 1)) * (bernoulli[(2 * n) - 1])
+//					* NewMathLib.pow(NewMathLib.toRadians(input), ((2 * n) - 1));
+//			double divisor = factorial(2 * n);
+//			output = output + (dividend / divisor);
+//		}
+//		return output;
+
+//		input = NewMathLib.toRadians(input);
+//		return input + (NewMathLib.pow(input, 3) / 3) + (2 * NewMathLib.pow(input, 5) / 15)
+//				+ (17 * NewMathLib.pow(input, 7) / 315)+ (62 * NewMathLib.pow(input, 9) / 2835);
+		
+		input = NewMathLib.toRadians(input);
+		return (Math.sin(input)/Math.cos(input));
+
 	}
 
 	/**
@@ -49,10 +63,17 @@ public class NewMathLib {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println(NewMathLib.tan(46));
-		System.out.println(Math.tan(Math.toRadians(46)));
+		System.out.println(NewMathLib.tan(77));
+		System.out.println(Math.tan(Math.toRadians(77)));
+		System.out.println(Math.tan(4.71239));
+
 		System.out.println(NewMathLib.pow(2, -9));
 		System.out.println(Math.pow(2, -9));
+
+		System.out.println(NewMathLib.toRadians(1));
+		System.out.println(Math.toRadians(1));
+		
+		System.out.println(NewMathLib.pow(NewMathLib.toRadians(77), 9) / 2835);
 	}
 
 }
