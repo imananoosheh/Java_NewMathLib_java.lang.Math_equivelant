@@ -33,13 +33,12 @@ public class NewMathLib {
 	public static double toRadians(double degree) {
 		return degree * NewMathLib.PI / 180;
 	}
+	public static double toDegree(double radian) {
+		return radian * (180/NewMathLib.PI);
+	}
 
 	public static double tan(double input) {
 
-//		input = NewMathLib.toRadians(input);
-//		return input + (NewMathLib.pow(input, 3) / 3) + (2 * NewMathLib.pow(input, 5) / 15)
-//				+ (17 * NewMathLib.pow(input, 7) / 315)+ (62 * NewMathLib.pow(input, 9) / 2835);
-		
 		input = NewMathLib.toRadians(input);
 		return (Math.sin(input)/Math.cos(input));
 
