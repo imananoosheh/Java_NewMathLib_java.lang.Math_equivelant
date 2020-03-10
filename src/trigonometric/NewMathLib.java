@@ -36,6 +36,23 @@ public class NewMathLib {
 		return degree * NewMathLib.PI / 180;
 	}
 
+	public static double cosFunction(double input) {
+
+		int exp = 10;
+		double output = 0.0;
+		// double dividend = 0;
+		// double divisor = 0;
+
+		input = toRadians(input);
+		for (int n = 0; n <= exp; n++) {
+			double dividend = pow(-1, n) * pow(input, 2 * n);
+			double divisor = factorial(2 * n);
+			output += (dividend / divisor);
+		}
+		return (output);
+
+	}
+
 	public static double tan(double input) {
 //		double output = 0.0000;
 //		for (int n = 1; n <= 6; n++) {
@@ -51,9 +68,9 @@ public class NewMathLib {
 //		input = NewMathLib.toRadians(input);
 //		return input + (NewMathLib.pow(input, 3) / 3) + (2 * NewMathLib.pow(input, 5) / 15)
 //				+ (17 * NewMathLib.pow(input, 7) / 315)+ (62 * NewMathLib.pow(input, 9) / 2835);
-		
+
 		input = NewMathLib.toRadians(input);
-		return (Math.sin(input)/Math.cos(input));
+		return (Math.sin(input) / Math.cos(input));
 
 	}
 
@@ -72,7 +89,7 @@ public class NewMathLib {
 
 		System.out.println(NewMathLib.toRadians(1));
 		System.out.println(Math.toRadians(1));
-		
+
 		System.out.println(NewMathLib.pow(NewMathLib.toRadians(77), 9) / 2835);
 	}
 
