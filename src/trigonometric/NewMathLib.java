@@ -21,20 +21,14 @@ public class NewMathLib {
 		return output;
 	}
 
-	static double pow(double a, double b) {
-		double output = 1;
-		while (b != 0) {
-			output *= a;
-			if (b < 0) {
-				++b;
-			} else {
-				--b;
-			}
+	public static double pow(double basis, double exponent) {
+		if (exponent > 0) {
+			return basis * NewMathLib.pow(basis, exponent - 1);
+		} else if (exponent < 0) {
+			return (1 / NewMathLib.pow(basis, -exponent));
+		} else {
+			return 1;
 		}
-		if (b < 0) {
-			output = 1 / output;
-		}
-		return output;
 	}
 
 	public static double tan(int input) {
@@ -57,7 +51,7 @@ public class NewMathLib {
 
 		System.out.println(NewMathLib.tan(46));
 		System.out.println(Math.tan(Math.toRadians(46)));
-		System.out.println(NewMathLib.pow(-2, 9));
+		System.out.println(NewMathLib.pow(2, -9));
 		System.out.println(Math.pow(2, -9));
 	}
 
