@@ -38,11 +38,25 @@ public class NewMathLib {
 		return radian * (180 / NewMathLib.PI);
 	}
 
+	public static double sinFunc(double rad) {
+		int no = 10;
+		double output = 0.0;
+		rad = toRadians(rad);
+		for (int n = 0; n <= no; n++) {
+			double dividend = pow(-1, n) * pow(rad, (2 * n+1));
+			double divisor = factorial((2 * n+1));
+			output += (dividend / divisor);		
+
+		}
+		return output;
+
+	}
+
 	public static double cos(double input) {
 
 		int exp = 10;
 		double output = 0.0;
-		
+
 		input = toRadians(input);
 		for (int n = 0; n <= exp; n++) {
 			double dividend = pow(-1, n) * pow(input, 2 * n);
@@ -66,14 +80,14 @@ public class NewMathLib {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		System.out.println(NewMathLib.tan(77));
-		System.out.println(Math.tan(Math.toRadians(77)));
+		System.out.println(NewMathLib.sinFunc(88));
+		System.out.println(Math.sin(Math.toRadians(88)));
 
-		System.out.println(NewMathLib.pow(2, -9));
+		/*System.out.println(NewMathLib.pow(2, -9));
 		System.out.println(Math.pow(2, -9));
 
 		System.out.println(NewMathLib.toRadians(1));
-		System.out.println(Math.toRadians(1));
+		System.out.println(Math.toRadians(1)); */
 
 	}
 
