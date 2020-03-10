@@ -33,14 +33,32 @@ public class NewMathLib {
 	public static double toRadians(double degree) {
 		return degree * NewMathLib.PI / 180;
 	}
+
 	public static double toDegree(double radian) {
-		return radian * (180/NewMathLib.PI);
+		return radian * (180 / NewMathLib.PI);
+	}
+
+	public static double cosFunction(double input) {
+
+		int exp = 10;
+		double output = 0.0;
+		// double dividend = 0;
+		// double divisor = 0;
+
+		input = toRadians(input);
+		for (int n = 0; n <= exp; n++) {
+			double dividend = pow(-1, n) * pow(input, 2 * n);
+			double divisor = factorial(2 * n);
+			output += (dividend / divisor);
+		}
+		return (output);
+
 	}
 
 	public static double tan(double input) {
 
 		input = NewMathLib.toRadians(input);
-		return (Math.sin(input)/Math.cos(input));
+		return (Math.sin(input) / Math.cos(input));
 
 	}
 
