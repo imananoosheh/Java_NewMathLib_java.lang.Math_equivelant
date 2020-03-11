@@ -32,4 +32,8 @@ Finally we fixed the _tan()_ function and ran the tests again and we successfull
 
 
 
-![Screen Shot 1](https://anoosheh.info/img/junit-testing-assignment/2ndScreenShot.png)
+![Screen Shot 2](https://anoosheh.info/img/junit-testing-assignment/2ndScreenShot.png)
+
+Firtsly, Test has been done in _Test Case_ form, then testing has been switched to _Test Suite_ form as shown below.
+
+![Screen Shot 3](https://anoosheh.info/img/junit-testing-assignment/3rdScreenShot.png)
